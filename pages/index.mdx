@@ -1,0 +1,53 @@
+---
+title: ZoomHandler - A Discord.js handler for you!
+description: Let CommandKit handle it for you!
+---
+
+import Link from 'next/link';
+
+export function FeatureList() {
+    return (
+        <section className="max-w-[400px] md:max-w-none mx-auto md:w-[700px] lg:w-[850px]">
+            <h2>Features</h2>
+            <ul>
+                <li>Events Handler</li>
+                <li>Message Commands Handler</li>
+
+                <li>InteractionCreate Commands Handler (Soon)</li>
+                <li>Top.GG API (Soon)</li>
+                <li>Validations (Soon)</li>
+            </ul>
+    </section>
+    )
+
+}
+
+export default function Home() {
+    return (
+        <>
+            <section className="w-72 h-96 mx-auto text-center mt-20 mb-28 md:mb-16 flex items-center justify-center flex-col md:flex-row-reverse md:gap-2 md:text-left md:mt-12 md:w-[700px] lg:w-[850px]">
+
+                <div>
+                    <p className="text-4xl font-bold mb-5 md:text-5xl lg:text-6xl">
+                        Give a chance to{' '}
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#808080] to-[#202020]">
+                            ZoomHandler
+                        </span>{' '}
+                        handle it for you!
+                    </p>
+                    <p className="font-semibold lg:text-xl">
+                        A Discord.js handler for commands and events.
+                    </p>
+
+                    <div className="flex items-center justify-center gap-3 mt-10 md:justify-start text-neutral-100">
+                        <Link href='/docs/zoomHandler' className="font-semibold bg-[#606060] py-2 px-4 rounded-full">Docs</Link>
+                        <Link href='https://github.com/theoldzoom/zoomHandler' className="font-semibold bg-[#808080] py-2 px-4 rounded-full" target="_blank" rel="noopener noreferrer">GitHub</Link>
+                    </div>
+                </div>
+            </section>
+
+            <FeatureList />
+        </>
+    );
+
+}

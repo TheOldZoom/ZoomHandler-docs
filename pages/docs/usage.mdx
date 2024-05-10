@@ -1,0 +1,33 @@
+---
+title: Usage
+description: Give a chance to ZoomHandler to handle it to you!
+---
+# Usage
+
+This guide will walk you through how to use ZoomHandler in your project.
+
+## Importing ZoomHandler
+
+After installation, import ZoomHandler into your project like this:
+
+```javascript
+const { ZoomHandler } = require("zoomhandler");
+```
+
+## Creating an Instance
+
+Next, create an instance of the `ZoomHandler` class. You'll need to provide a configuration object with the following properties:
+
+```javascript
+new ZoomHandler({
+  client, // Your discord client instance
+  messageCommandsPath: path.join(__dirname, "commands"), // Path to your command files
+  eventsPath: path.join(__dirname, "events"), // Path to your event files
+});
+```
+Make sure that the directory actually exists, or an error will occurs.
+
+## Additional Resources
+
+- [Discord.js Official Guide](https://discord.js.org/#/docs/main/stable/general/welcome)
+- [ZoomHandler's Offical Server](https://discord.gg/bWCnhEw4r2)

@@ -1,0 +1,41 @@
+---
+title: Event Example
+description: Give a chance to ZoomHandler to handle it to you!
+---
+# Events
+
+## Quick info
+
+You must define `eventsPath` in your main file like this:
+
+```js
+const { ZoomHandler } = require('zoomhandler');
+const path = require("path");
+
+new ZoomHandler({
+  client, // Your discord client instance
+  eventsPath: path.join(__dirname, "events"), // Path to your event files
+});
+```
+
+Similarly, to define events, create separate files within the `eventsPath` directory. Each event file should export a function containing the event logic. Here's an example of a ready event:
+
+## The Events
+You can use the `ready` event like this:
+
+```javascript
+// events/ready.js
+
+module.exports = (client) => {
+  client.log.ready(`${client.user.tag} is ready!`);
+};
+```
+or even use the `messageCreate` event like this:
+
+```javascript
+// events/messageCreate.js
+
+module.exports = (client, message) => {
+  client.log.event(message.content)
+};
+```

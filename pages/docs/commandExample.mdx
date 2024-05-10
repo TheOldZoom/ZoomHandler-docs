@@ -1,0 +1,33 @@
+---
+title: Message Commands
+description: Give a chance to ZoomHandler to handle it to you!
+---
+# Message Commands
+
+## Quick info
+
+You must define `messageCommandsPath` in your main file like this:
+
+```js
+const { ZoomHandler } = require('zoomhandler');
+const path = require("path");
+
+new ZoomHandler({
+  client, // Your discord client instance
+  messageCommandsPath: path.join(__dirname, "commands"), // Path to your event files
+});
+```
+
+To define message commands, create separate files within the `messageCommandsPath` directory. Each command file should export a function containing the command logic. Here's an example of a simple ping command:
+
+```javascript
+// commands/ping.js
+
+module.exports = {
+    name: 'ping',
+    description: 'Ping! Pong!',
+    execute(message, args) {
+        message.channel.send('Pong!');
+    }
+};
+```
